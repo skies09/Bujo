@@ -8,4 +8,14 @@ class DiaryEntrySerializer(serializers.ModelSerializer):
     class Meta:
         model = Diary
         fields = ["id", "title", "content", "date_created", "user_id", "date"]
-        read_only_fields = ["user_id", "date_created"]
+        read_only_fields = ["user_id", "date_created"]  # REMOVE 'date' from here
+
+    def validate_title(self, value):
+        if not value or not value.strip():
+            raise serializers.ValidationError("Title is required.")
+        return value
+
+    def validate_content(self, value):
+        if not value or not value.strip():
+            raise serializers.ValidationError("Content is required.")
+        return value
