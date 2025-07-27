@@ -5,18 +5,18 @@ from accounts.user.serializers import UserSerializer
 from accounts.user.models import User
 from accounts.abstract.viewsets import AbstractViewSet
 
+
 class UserViewSet(AbstractViewSet):
-    http_method_names = ('patch', 'get')
+    http_method_names = ("patch", "get")
     permission_classes = (IsAuthenticated,)
     serializer_class = UserSerializer
-
 
     def get_queryset(self):
         if self.request.user.is_superuser:
             return User.objects.all()
         return User.objects.exclude(is_superuser=True)
-    
+
     def get_object(self):
-        obj=User.objects.get_object_by_public_id(self.kwargs['pk'])
+        obj = User.objects.get(pk=self.kwargs["pk"])
         self.check_object_permissions(self.request, obj)
         return obj

@@ -36,6 +36,7 @@ class Diary(AbstractModel):
     date = models.DateField(auto_now_add=True, null=True)
     title = models.CharField(max_length=200)
     content = models.TextField()
+    highlight = models.TextField()
     date_created = models.DateTimeField(default=timezone.now)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 

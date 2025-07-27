@@ -5,7 +5,7 @@ from accounts.abstract.serializers import AbstractSerializer
 
 
 class UserSerializer(AbstractSerializer):
-    id = serializers.IntegerField(read_only=True)  # Ensure integer id is always present
+    id = serializers.IntegerField(read_only=True)
     public_id = serializers.UUIDField(read_only=True, format="hex")
 
     class Meta:
@@ -24,4 +24,4 @@ class UserSerializer(AbstractSerializer):
             "created",
             "updated",
         ]
-        read_only_fields = ["is_active", "created", "updated", "id", "public_id"]
+        read_only_fields = ["is_active", "created", "updated", "public_id", "id"]

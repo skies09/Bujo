@@ -7,7 +7,15 @@ class DiaryEntrySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Diary
-        fields = ["id", "title", "content", "date_created", "user_id", "date"]
+        fields = [
+            "id",
+            "title",
+            "content",
+            "highlight",
+            "date_created",
+            "user_id",
+            "date",
+        ]
         read_only_fields = ["user_id", "date_created"]  # REMOVE 'date' from here
 
     def validate_title(self, value):
