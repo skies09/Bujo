@@ -8,6 +8,13 @@ from accounts.auth.viewsets import (
 )
 from accounts.user.viewsets import UserViewSet
 from accounts.diary.viewsets import DiaryEntryViewSet
+from accounts.user_profile.viewsets import (
+    AffirmationViewSet,
+    GratitudeViewSet,
+    PassionViewSet,
+    FavoriteThingViewSet,
+    AboutViewSet,
+)
 
 # Use DefaultRouter for browsable API support
 router = routers.DefaultRouter()
@@ -23,5 +30,12 @@ router.register(r"user", UserViewSet, basename="user")
 
 # ---------------- DIARY ----------------
 router.register(r"diary", DiaryEntryViewSet, basename="diary")
+
+# ---------------- USER PROFILE ----------------
+router.register(r"profile/affirmations", AffirmationViewSet, basename="affirmations")
+router.register(r"profile/gratitudes", GratitudeViewSet, basename="gratitudes")
+router.register(r"profile/passions", PassionViewSet, basename="passions")
+router.register(r"profile/favorites", FavoriteThingViewSet, basename="favorites")
+router.register(r"profile/about", AboutViewSet, basename="about")
 
 urlpatterns = [*router.urls]

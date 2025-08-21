@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     "accounts.user",
     "accounts.auth",
     "accounts.diary",
+    "accounts.user_profile",
 ]
 
 MIDDLEWARE = [
