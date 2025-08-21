@@ -106,7 +106,6 @@ class About(AbstractModel):
     
     # Personal Information
     nickname = models.CharField(max_length=100, blank=True, null=True)
-    pronouns = models.CharField(max_length=50, blank=True, null=True)
     location = models.CharField(max_length=200, blank=True, null=True)
     occupation = models.CharField(max_length=200, blank=True, null=True)
     education = models.TextField(blank=True, null=True)

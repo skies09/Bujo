@@ -76,7 +76,6 @@ class AboutSerializer(AbstractSerializer):
         fields = [
             "id",
             "nickname",
-            "pronouns",
             "location",
             "occupation",
             "education",

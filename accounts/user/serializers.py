@@ -16,7 +16,6 @@ class UserSerializer(AbstractSerializer):
             "username",
             "name",
             "email",
-            "bio",
             "avatar",
             "date_of_birth",
             "theme",

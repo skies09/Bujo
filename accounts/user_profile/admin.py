@@ -53,7 +53,7 @@ class AboutAdmin(admin.ModelAdmin):
     
     fieldsets = (
         ('User Information', {
-            'fields': ('user', 'nickname', 'pronouns', 'location', 'occupation', 'education')
+            'fields': ('user', 'nickname', 'location', 'occupation', 'education')
         }),
         ('Personal Details', {
             'fields': ('personality_type', 'zodiac_sign', 'life_goals', 'personal_mission')
